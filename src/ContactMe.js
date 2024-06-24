@@ -84,7 +84,7 @@ const ContactMe = () => {
             <p className="error-message">{formik.errors.message}</p>
           ) : null}
         </div>
-        <button type="submit">Send</button>
+        <button type="submit">submit</button>
       </form>
     </section>
   );
