@@ -15,9 +15,11 @@ const ContactForm = () => {
     message: Yup.string().required('Message is required'),
   });
 
-  const handleSubmit = (values, { setSubmitting }) => {
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
     // Handle form submission here (e.g., send data to server)
     console.log(values);
+    // Perform your submit action (e.g., API call) here
+    resetForm();
     setSubmitting(false);
   };
 
@@ -28,17 +30,17 @@ const ContactForm = () => {
           <div>
             <label htmlFor="name">Name:</label>
             <Field type="text" id="name" name="name" />
-            <ErrorMessage name="name" component="div" />
+            <ErrorMessage name="name" component="div" className="error-message" />
           </div>
           <div>
             <label htmlFor="email">Email:</label>
             <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage name="email" component="div" className="error-message" />
           </div>
           <div>
             <label htmlFor="message">Message:</label>
             <Field as="textarea" id="message" name="message" />
-            <ErrorMessage name="message" component="div" />
+            <ErrorMessage name="message" component="div" className="error-message" />
           </div>
           <button type="submit" disabled={isSubmitting}>Submit</button>
         </Form>
