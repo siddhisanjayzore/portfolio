@@ -4,6 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const blogRoutes = require('./routes/blogRoutes'); // Adjust the path as needed
 
 const app = express();
 const port = 5000;
@@ -15,6 +16,8 @@ mongoose.connect('mongodb://localhost:27017/your_database_name', { useNewUrlPars
 
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use('/api', blogRoutes); // Ensure this matches your frontend requests
 
 // Define the contact schema and model
 const contactSchema = new mongoose.Schema({
