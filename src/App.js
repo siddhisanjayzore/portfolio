@@ -7,6 +7,9 @@ import Projects from './Projects';
 import Skills from './Skills';
 import ContactMe from './ContactMe';
 import Footer from './Footer';
+import AdminDashboard from './AdminDashboard';
+import Login from './Login';
+import Blogs from './Blogs';
 import './App.css';
 
 function App() {
@@ -19,7 +22,10 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<ContactMe />} />
-        </Routes>
+          <Route path="/Admin" element={<AdminDashboard />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/blogs" element={<Blogs />} />
+          </Routes>
         <Footer />
       </Router>
     </div>
@@ -27,4 +33,3 @@ function App() {
 }
 
 export default App;
-
